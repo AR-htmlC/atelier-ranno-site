@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supports - Vêtements | Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.support-vetement-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .retour-accueil {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .retour-accueil:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      text-decoration: underline;
+    }
+
+    .support-container {
+      max-width: 1200px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 60px 40px 40px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .support-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .support-image {
+      flex: 1 1 50%;
+    }
+
+    .support-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .support-text {
+      flex: 1 1 50%;
+    }
+
+    .support-text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .support-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #f0f0f0;
+    }
+
+    .devis-bouton-container {
+      margin-top: 30px;
+      text-align: right;
+    }
+
+    .devis-btn {
+      background-color: #ffffff;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .devis-btn:hover {
+      background-color: #ffcc00;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      .support-row {
+        flex-direction: column;
+      }
+
+      .devis-bouton-container {
+        text-align: center;
+      }
+
+      .retour-accueil {
+        left: 10px;
+        top: 10px;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body class="support-vetement-page">
+  <a href="index.html" class="retour-accueil">← Retour à l'accueil</a>
+  <div class="support-container">
+    <div class="support-row">
+      <div class="support-image">
+        <img src="image/vetement.png" alt="Personnalisation de vêtements" />
+      </div>
+      <div class="support-text">
+        <h2>Personnalisation de vêtements</h2>
+        <p><strong>Type d'impression :</strong> DTF (Direct to Film), sérigraphie, broderie, flocage selon le style.</p>
+        <p><strong>Méthodes utilisées :</strong> Impression numérique, transfert thermique, ou techniques traditionnelles selon le rendu souhaité.</p>
+        <p><strong>Supports proposés :</strong> T-shirts, sweats, hoodies, polos, vestes, zippés, pour hommes, femmes et enfants.</p>
+        <p><strong>Prix :</strong> Variables selon la quantité, la surface imprimée, le textile et la technique utilisée.</p>
+
+        <div class="devis-bouton-container">
+          <a href="devis.html" class="devis-btn">👕 Je veux mon devis gratuit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

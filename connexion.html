@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion - Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.connexion-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #ffcc00;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .connexion-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .connexion-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    .connexion-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #ffcc00;
+    }
+
+    .connexion-form label {
+      display: block;
+      margin-bottom: 8px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .connexion-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .connexion-form button {
+      width: 100%;
+      background-color: white;
+      color: black;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .connexion-form button:hover {
+      background-color: #ffcc00;
+    }
+
+    .lien-inscription {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .lien-inscription a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .lien-inscription a:hover {
+      text-decoration: underline;
+    }
+
+    .retour-interne {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .retour-interne .back-link {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .retour-interne .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body class="connexion-page">
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <div class="connexion-wrapper">
+    <div class="connexion-container">
+      <h1>Connexion</h1>
+      <form class="connexion-form">
+        <label for="email"><span class="arrow">➜</span> Adresse e-mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password"><span class="arrow">➜</span> Mot de passe</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Se connecter</button>
+
+        <p class="lien-inscription">Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p>
+      </form>
+
+      <div class="retour-interne">
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

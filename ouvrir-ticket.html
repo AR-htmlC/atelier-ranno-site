@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ouvrir un ticket - Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.connexion-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .connexion-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .connexion-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #ffcc00;
+    }
+
+    .ticket-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Clear Sans', sans-serif;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffcc00;
+    }
+
+    .logo-bottom {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .back-link {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    /* Message de succès */
+    .success-message {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      animation: fadeInOut 3s forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .connexion-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="connexion-page">
+  <div class="connexion-wrapper">
+    <div class="connexion-container">
+      <div id="successMessage" class="success-message">✅ Ticket envoyé avec succès !</div>
+
+      <h2>📩 Ouvrir un ticket</h2>
+
+      <form class="ticket-form" id="ticketForm">
+        <div class="form-row">
+          <label for="objet">Objet :</label>
+          <input type="text" id="objet" name="objet" required placeholder="Ex : Problème avec une commande" />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Décrivez votre problème ou votre demande ici..."></textarea>
+        </div>
+
+        <button type="submit">Envoyer le ticket</button>
+      </form>
+
+      <div class="logo-bottom">
+        <a href="compte.html" class="back-link">← Retour à mon espace</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Script pour afficher la confirmation après soumission
+    document.getElementById('ticketForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const message = document.getElementById('successMessage');
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 3000);
+      // Ici tu pourrais ajouter une vraie soumission AJAX plus tard si besoin
+    });
+  </script>
+</body>
+</html>

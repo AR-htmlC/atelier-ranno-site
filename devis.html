@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande de devis | Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.devis-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+}
+
+.retour-accueil {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.retour-accueil:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  text-decoration: underline;
+}
+
+.checkbox-design {
+  width: fit-content;
+  margin-top: 5px;
+  float: left;
+}
+
+.question-design{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 5px;
+  float: left;
+}
+
+.checkbox-design label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  vertical-align: middle; /* Ajout */
+}
+
+.checkbox-design input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+  margin: 0;
+  display: inline-block; /* Ajout important */
+  vertical-align: middle; /* Ajout */
+}
+
+.devis-container {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.devis-container h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.devis-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.devis-form input,
+.devis-form textarea,
+.devis-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  box-sizing: border-box;
+  font-family: 'Clear Sans', sans-serif;
+  font-size: 14px;
+}
+
+.support-entry {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.support-entry input[type="text"] {
+  flex: 2;
+}
+
+.support-entry input[type="number"] {
+  flex: 1;
+}
+
+.add-support-btn {
+  background-color: #ffcc00;
+  color: black;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  border: none;
+}
+
+.file-upload {
+  margin-top: 10px;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #ffcc00;
+}
+
+.locked {
+  background-color: #444;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.description {
+  margin-top: 50px;
+}
+
+  </style>
+</head>
+<body class="devis-page">
+    <a href="index.html" class="retour-accueil">← Retour à l'accueil</a>
+  <div class="devis-container">
+    <h2>📄 Demande de devis</h2>
+    <form class="devis-form" onsubmit="verifierFormulaire(event)">
+      <label for="user-id">Numéro d'utilisateur</label>
+      <input type="text" id="user-id" name="user-id" class="locked" value="0000" readonly title="Impossible de changer" />
+
+      <label>Supports demandés</label>
+      <div id="supports-list">
+        <div class="support-entry">
+          <input type="text" name="support[]" placeholder="Nom du support" required />
+          <input type="number" name="quantite[]" placeholder="Quantité" min="1" required />
+        </div>
+      </div>
+      <button type="button" class="add-support-btn" onclick="ajouterSupport()">+ Ajouter un support</button>
+
+      <label>Méthodes d'impression souhaitées</label>
+      <input type="text" name="methode" placeholder="DTF, broderie, etc..." />
+
+      <div class="checkbox-design">
+        <label for="designCheck">
+          <input type="checkbox" id="designCheck" onchange="toggleFichierDesign()" />
+        </label>
+      </div>
+
+      <div class="question-design">
+      <span>As-tu un design ?</span>
+      </div>
+
+      <div id="zone-fichiers" class="file-upload" style="display: none;">
+        <input type="file" id="fichier-design" name="design[]" accept=".pdf,.ai,.psd" multiple />
+      </div>
+
+      <div class="description">
+        <label for="description">Description de votre commande</label>
+      <textarea id="description" name="description" rows="5" placeholder="Expliquez en détail ce que vous souhaitez..." required></textarea>
+     </div>
+
+      <button type="submit" class="submit-btn">Envoyer la demande</button>
+    </form>
+  </div>
+</body>
+</html>

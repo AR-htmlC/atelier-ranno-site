@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscription - Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.connexion-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #ffcc00;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .connexion-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .connexion-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 600px;
+      box-sizing: border-box;
+    }
+
+    .connexion-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #ffcc00;
+    }
+
+    .inscription-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-row > div {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+    }
+
+    button[type="submit"] {
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffcc00;
+    }
+
+    .lien-inscription {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .lien-inscription a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .lien-inscription a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body class="connexion-page">
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <div class="connexion-wrapper">
+    <div class="connexion-container">
+      <h1>Créer un compte</h1>
+      <form class="inscription-form" action="traitement_inscription.php" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required />
+          </div>
+          <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="full-width">
+            <label for="confirm-password">Confirmer le mot de passe</label>
+            <input type="password" id="confirm-password" name="confirm-password" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="full-width">
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="numero">N°</label>
+            <input type="text" id="numero" name="numero" required />
+          </div>
+          <div>
+            <label for="code-postal">Code postal</label>
+            <input type="text" id="code-postal" name="code-postal" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" required />
+          </div>
+          <div>
+            <label for="pays">Pays</label>
+            <input type="text" id="pays" name="pays" required />
+          </div>
+        </div>
+
+        <button type="submit">Créer un compte</button>
+        <p class="lien-inscription">Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>
+      </form>
+
+      <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

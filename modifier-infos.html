@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modifier mes informations - Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.connexion-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .connexion-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .connexion-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .titre-formulaire {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #ffcc00;
+    }
+
+    form.inscription-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row > div {
+      flex: 1;
+      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-row .full-width {
+      flex: 1 1 100%;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Clear Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffcc00;
+    }
+
+    .logo-bottom {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .back-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    /* Message de confirmation */
+    .success-message {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      animation: fadeInOut 3s forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body class="connexion-page">
+
+  <div class="connexion-wrapper">
+    <div class="connexion-container">
+      <div id="successMessage" class="success-message">✅ Informations mises à jour avec succès !</div>
+
+      <h2 class="titre-formulaire">Modifier mes informations</h2>
+
+      <form class="inscription-form" id="updateForm">
+        <div class="form-row">
+          <div>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" value="Sophie" required />
+          </div>
+          <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" value="Delvaux" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" value="sophie@example.com" required />
+          </div>
+          <div>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="********" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="full-width">
+            <label for="adresse">Rue</label>
+            <input type="text" id="adresse" name="adresse" value="Rue de la Création" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="numero">N°</label>
+            <input type="text" id="numero" name="numero" value="42" required />
+          </div>
+          <div>
+            <label for="code-postal">Code postal</label>
+            <input type="text" id="code-postal" name="code-postal" value="7500" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" value="Tournai" required />
+          </div>
+          <div>
+            <label for="pays">Pays</label>
+            <input type="text" id="pays" name="pays" value="Belgique" required />
+          </div>
+        </div>
+
+        <button type="submit">Mettre à jour</button>
+      </form>
+
+      <div class="logo-bottom">
+        <a href="compte.html" class="back-link">← Retour à mon espace</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Petit script pour afficher le message de succès
+    document.getElementById('updateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const message = document.getElementById('successMessage');
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>

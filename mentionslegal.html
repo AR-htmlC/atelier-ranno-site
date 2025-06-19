@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions Légales | Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.mentions-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .retour-accueil {
+      position: absolute;
+      top: 50px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .retour-accueil:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      text-decoration: underline;
+    }
+
+    .mentions-container {
+      max-width: 1000px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 60px 40px 40px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .mentions-container h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .mentions-container p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #f0f0f0;
+    }
+
+    @media (max-width: 768px) {
+      .retour-accueil {
+        left: 10px;
+        top: 10px;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .mentions-container {
+        padding: 40px 20px;
+      }
+
+      .mentions-container h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body class="mentions-page">
+  <a href="index.html" class="retour-accueil">← Retour à l'accueil</a>
+
+  <div class="mentions-container">
+    <h1>Mentions Légales</h1>
+
+    <p><strong>Identité :</strong> Atelier Ranno</p>
+    <p><strong>Siège social :</strong> Cité Fauvieau H. 16, 7340 Colfontaine, Belgique</p>
+    <p><strong>Adresse Entreprise :</strong> Rue Roger Salengro 3, 59370 Mons en Baroeul, France</p>
+    <p><strong>Numéro TVA :</strong> BE1020289946</p>
+    <p><strong>Email :</strong> atelierranno@gmail.com</p>
+    <p><strong>Téléphone :</strong> +32 (0)473 28 92 31</p>
+
+    <p><strong>Nom de domaine :</strong> Géré par OVH</p>
+    <p><strong>Hébergeur :</strong> Webstrator, Société Octogency<br>
+      Adresse : Lieu dit en Roc, 81100 Castres, France</p>
+
+    <p><strong>Directeur de publication :</strong> Doryan Ranno</p>
+
+    <p>Conformément à la réglementation européenne (RGPD), Atelier Ranno s'engage à protéger les données personnelles collectées via son site web. Pour toute demande relative à vos données, veuillez nous contacter à l'adresse email ci-dessus.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Atelier Ranno</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.contact-page {
+      background: url("image/fond.png") center/cover no-repeat fixed;
+      color: white;
+      font-family: 'Clear Sans', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .retour-accueil {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .retour-accueil:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      text-decoration: underline;
+    }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 60px 40px 40px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-align: center;
+    }
+
+    .contact-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #f0f0f0;
+    }
+
+    .contact-text a {
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact-text a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+  <a href="index.html" class="retour-accueil">← Retour à l'accueil</a>
+
+  <div class="contact-container">
+    <h2>📞 Contactez-nous</h2>
+
+    <div class="contact-text">
+      <p><strong>L'Atelier Ranno</strong></p>
+
+      <p><strong>Horaires d'ouverture :</strong><br>
+        Lundi : Fermé<br>
+        Mardi : 18h00 - 22h00<br>
+        Mercredi : 18h00 - 22h00<br>
+        Jeudi : 18h00 - 22h00<br>
+        Vendredi : 14h00 - 22h00<br>
+        Samedi : 8h00 - 12h00 et 12h30 - 20h00<br>
+        Dimanche : 10h00 - 12h00 et 12h30 - 20h00
+      </p>
+
+      <p><strong>Contact mail (réponse 24h/24 7j/7 dès que possible) :</strong><br>
+        <a href="mailto:atelierranno@gmail.com">atelierranno@gmail.com</a>
+      </p>
+
+      <p><strong>Contact téléphone (pendant les horaires uniquement) :</strong><br>
+        <a href="tel:+32473289231">+32 (0)473 28 92 31</a>
+      </p>
+
+      <p><strong>Support technique ou questions hors commande :</strong><br>
+        <a href="mailto:admin@atelierranno.be">admin@atelierranno.be</a> ou <a href="mailto:support@atelierranno.be">support@atelierranno.be</a>
+      </p>
+
+      <p><strong>Information importante :</strong><br>
+        Toutes les commandes se font uniquement en ligne.<br>
+        <br>
+        En cas de problème sur une commande, un rendez-vous par email ou téléphone sera nécessaire pour trouver ensemble une solution adaptée.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
